@@ -1,5 +1,8 @@
 package com.mngen.service;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class FizzBuzzService {
 
     private static final String FIZZ = "fizz";
@@ -13,18 +16,18 @@ public class FizzBuzzService {
      */
     public String processNumber(int candidate) {
 
-        if(candidate == 0) {
-            return String.valueOf(candidate);
-        }
-        if(candidate%15 == 0) {
-            return FIZZ_BUZZ;
-        }
-        if(candidate%5 == 0) {
-            return BUZZ;
-        }
-        if(candidate%3 == 0) {
-            return FIZZ;
-        }
+        if (check(candidate, 15)) return FIZZ_BUZZ;
+        if (check(candidate, 5)) return BUZZ;
+        if (check(candidate, 3)) return FIZZ;
+
         return String.valueOf(candidate);
+    }
+
+    private boolean check(int candidate, int factor) {
+        if(candidate <= 0) {
+            log.error("you should provide positive non zero value");
+            return false;
+        }
+        return candidate % factor == 0;
     }
 }
