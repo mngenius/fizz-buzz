@@ -11,7 +11,7 @@
 
     <properties>
         <lombokVersion>1.18.10</lombokVersion>
-        <junitVersion>4.12</junitVersion>
+        <junitVersion>4.13.1</junitVersion>
         <slf4jVersion>1.7.25</slf4jVersion>
         <log4jVersion>1.7.5</log4jVersion>
     </properties>
